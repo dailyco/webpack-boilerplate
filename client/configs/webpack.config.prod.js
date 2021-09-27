@@ -8,7 +8,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpackConfigProd = {
   mode: 'production',
   output: {
-    path: path.resolve(__dirname, '../dist/js/'),
+    path: path.resolve(__dirname, '../../dist/js/'),
     filename: '[name].bundle.js',
   },
   module: {
@@ -21,12 +21,12 @@ const webpackConfigProd = {
   },
   plugins: [
     new CleanWebpackPlugin({
-      cleanOnceBeforeBuildPatterns: [path.resolve(__dirname, '../build')],
+      cleanOnceBeforeBuildPatterns: [path.resolve(__dirname, '../../dist')],
     }),
     new HtmlWebpackPlugin({
       inject: true,
-      template: path.resolve(__dirname, '../src/views/index.html'),
-      filename: path.resolve(__dirname, '../dist/index.html'),
+      template: path.resolve(__dirname, '../src/index.html'),
+      filename: path.resolve(__dirname, '../../dist/index.html'),
       minify: {
         removeComments: true,
         collapseWhitespace: true,
